@@ -4,5 +4,5 @@ This is the implementation for our paper [ChemMiner: A Large Language Model Agen
 ## Coming Soon (for real)
 to be fully open-source after I am done with several approaching deadlines :-)
 <p align="center">
-  <img src="ComingSoon.jpg"  width="1000"/>
+  <img src="ComingSoon.jpg"  width="250"/>
 </p>
