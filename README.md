@@ -30,7 +30,7 @@ Given OCR-parsed paper text in `jsonl` format, `run_extraction.py` performs:
   Reaction-schema prompts and results.
 
 - `GPT_output_fig_abbrev_{paper_id}.csv`  
-  Merged figure/table abbreviation maps (only if images exist).
+  Merged figure/table abbreviation maps.
 
 ## Why coreference-first?
 
