@@ -4,7 +4,7 @@ This is the implementation for our paper [ChemMiner: A Large Language Model Agen
 ## Literature Input
 The literature input is stored in jsonl format. The size of data is too large for github and it can be downloaded from [Google Drive](https://drive.google.com/file/d/1uKBPmtdvT7OHVr5UO8KqsQApjkpXaKH9/view?usp=sharing).
 
-### What it does
+## What it does
 
 Given OCR-parsed paper text in `jsonl` format, `run_extraction.py` performs:
 
@@ -21,7 +21,7 @@ Given OCR-parsed paper text in `jsonl` format, `run_extraction.py` performs:
    - If images are stored under `IMAGE_ROOT/{paper_id}/...`, the script runs a vision prompt (`prompt_function_figure_abbrev`) to extract an **abbreviation → chemical name** dictionary from each figure/table image
    - Per-paper dictionaries are merged and exported as CSV
 
-### Outputs (per paper)
+## Outputs (per paper)
 
 - `GPT_input_coreference{paper_id}.csv` / `GPT_output_coreference{paper_id}.csv`  
   Text coreference prompts and results.
@@ -32,6 +32,6 @@ Given OCR-parsed paper text in `jsonl` format, `run_extraction.py` performs:
 - `GPT_output_fig_abbrev_{paper_id}.csv`  
   Merged figure/table abbreviation maps (only if images exist).
 
-### Why coreference-first?
+## Why coreference-first?
 
 Chemical papers frequently reference compounds using short labels (e.g., “1a”, “3aa”), and crucial reaction details may appear in figures/tables rather than in the main text. A **coreference-first → reaction extraction** workflow improves robustness when scaling literature mining across large corpora.
