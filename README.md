@@ -6,7 +6,7 @@ The literature input is stored in jsonl format. The size of data is too large fo
 
 ## What it does
 
-Given OCR-parsed paper text in `jsonl` format, `run_extraction.py` performs:
+Given OCR-parsed paper in `jsonl` format, `run_extraction.py` performs:
 
 1. **Procedure-focused text slicing**
    - Searches for experimental procedure anchors such as **General Procedure / Typical Procedure / General Experimental Procedure**
