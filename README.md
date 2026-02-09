@@ -17,20 +17,9 @@ Given OCR-parsed paper text in `jsonl` format, `run_extraction.py` performs:
    - **Reaction schema extraction** (`prompt_function_general_procedure`): extracts structured fields in JSON:
      **yield / reactant / reagent / solvent / product**, using the general procedure as context to fill missing details when possible
 
-3. **Optional multimodal coreference from figures/tables**
-   - If images are stored under `IMAGE_ROOT/{paper_id}/...`, the script runs a vision prompt (`prompt_function_figure_abbrev`) to extract an **abbreviation → chemical name** dictionary from each figure/table image
+3. **Multimodal coreference from figures/tables**
+   - The script runs a prompt (`prompt_function_figure_abbrev`) to extract an **abbreviation → chemical name** dictionary from each figure/table image
    - Per-paper dictionaries are merged and exported as CSV
-
-## Outputs (per paper)
-
-- `GPT_input_coreference{paper_id}.csv` / `GPT_output_coreference{paper_id}.csv`  
-  Text coreference prompts and results.
-
-- `GPT_input_{paper_id}.csv` / `GPT_output_react{paper_id}.csv`  
-  Reaction-schema prompts and results.
-
-- `GPT_output_fig_abbrev_{paper_id}.csv`  
-  Merged figure/table abbreviation maps.
 
 ## Why coreference-first?
 
