@@ -12,14 +12,11 @@ Given OCR-parsed paper in `jsonl` format, `run_extraction.py` performs:
    - Searches for experimental procedure anchors such as **General Procedure / Typical Procedure / General Experimental Procedure**
    - Splits and merges nearby sentences into length-bounded sections that are suitable for LLM prompts
 
-2. **Agent-style extraction from text**
+2. **Agent-style extraction**
    - **Coreference extraction** (`prompt_function_gpt4_1v1`): extracts mappings like *full chemical name → abbreviation/label* (e.g., “2-chloroquinoline → 1a”)
    - **Reaction schema extraction** (`prompt_function_general_procedure`): extracts structured fields in JSON:
      **yield / reactant / reagent / solvent / product**, using the general procedure as context to fill missing details when possible
-
-3. **Multimodal coreference from figures/tables**
-   - The script runs a prompt (`prompt_function_figure_abbrev`) to extract an **abbreviation → chemical name** dictionary from each figure/table image
-   - Per-paper dictionaries are merged and exported as CSV
+   - **Multimodal coreference** (`prompt_function_figure_abbrev`): extracts an **abbreviation → chemical name** dictionary from each figure/table image
 
 ## Why coreference-first?
 
